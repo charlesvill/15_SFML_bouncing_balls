@@ -1,0 +1,32 @@
+#ifndef ANIMATE_H
+#define ANIMATE_H
+
+#include "../sidebar/sidebar.h"
+#include "../system/system.h"
+#include "SFML/Graphics/CircleShape.hpp"
+#include "SFML/Graphics/RenderWindow.hpp"
+#include <SFML/Graphics.hpp>
+
+class animate {
+public:
+  animate();
+  void run();
+  void processEvents();
+  void update();
+  void render();
+  void Draw();
+
+private:
+  sf::RenderWindow window;
+  sf::CircleShape mousePoint; // The little red dot
+  System system;              // container for all the animated objects
+  int command;                // command to send to system
+  sf::Font font;              // font to draw on main screen
+  sf::Text myTextLabel;       // text to draw on main screen
+  bool mouseIn;               // mouse is in the screen
+  Sidebar sidebar;            // rectangular message sidebar
+};
+
+string mouse_pos_string(sf::RenderWindow &window);
+
+#endif // !ANIMATE_H
