@@ -12,7 +12,7 @@ public:
   void Draw(sf::RenderWindow &window);
 
 private:
-  vector<Particle> system;
+  std::vector<Particle> system{50};
   // sf::CircleShape shape;
   // sf::Vector2f vel;
 };

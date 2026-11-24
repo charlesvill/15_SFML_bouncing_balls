@@ -1,78 +1,61 @@
 #include "system.h"
-#include "../random/random.h"
 #include "../constants.h"
+#include "../random/random.h"
 
-
-
-System::System()
-{
-
-
+System::System() {
 
   // create vector of particles
 
-
-
-
-
   //====================OLD=====================//
-    // Random r;
-    // int xpos = 100;
-    // int ypos = 100;
-    // the shape of the object, along with its velocity, acceleration,
-    // position, etc. should be part of the individual object.
-    // shape = sf::CircleShape(10);
-    // shape.setPosition(sf::Vector2f(xpos, ypos));
-    // vel = sf::Vector2f(r.Next(-5, 5), r.Next(-5, 5)); // random velocity
-    // int r_ = r.Next(0, 255);
-    // int g_ = r.Next(0, 255);
-    // int b_ = r.Next(0, 255);
-    // shape.setFillColor(sf::Color(r_, g_, b_));
+  // Random r;
+  // int xpos = 100;
+  // int ypos = 100;
+  // the shape of the object, along with its velocity, acceleration,
+  // position, etc. should be part of the individual object.
+  // shape = sf::CircleShape(10);
+  // shape.setPosition(sf::Vector2f(xpos, ypos));
+  // vel = sf::Vector2f(r.Next(-5, 5), r.Next(-5, 5)); // random velocity
+  // int r_ = r.Next(0, 255);
+  // int g_ = r.Next(0, 255);
+  // int b_ = r.Next(0, 255);
+  // shape.setFillColor(sf::Color(r_, g_, b_));
 }
 
 //------------------------------------------------------------------
 //------------------------------------------------------------------
 
-void System::Step(int command)
-{
+void System::Step(int command) {
   // iterate through particles and call their update fns
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  for (auto &walker : system) {
+    walker.move();
+    walker.apply_force();
+  }
   // =================OLD=============================//
-    // all this is the responsibility of the
-    //  individual object:
-    // shape.move(vel);
-// move() is one particle function 
-//
-// ===================================================//
-// this is apply_force function
-    // sf::Vector2f pos = shape.getPosition();
-    // if ((pos.x) >= WORK_PANEL - 20)
-    //     vel = sf::Vector2f(-1 * vel.x, 1 * vel.y);
-    // if (pos.x <= 0)
-    //     vel = sf::Vector2f(-1 * vel.x, 1 * vel.y);
-    // if ((pos.y) >= SCREEN_HEIGHT - 20)
-    //     vel = sf::Vector2f(1 * vel.x, -1 * vel.y);
-    // if (pos.y <= 0)
-    //     vel = sf::Vector2f(1 * vel.x, -1 * vel.y);
-//=====================================================//
+  // all this is the responsibility of the
+  //  individual object:
+  // shape.move(vel);
+  // move() is one particle function
+  //
+  // ===================================================//
+  // this is apply_force function
+  // sf::Vector2f pos = shape.getPosition();
+  // if ((pos.x) >= WORK_PANEL - 20)
+  //     vel = sf::Vector2f(-1 * vel.x, 1 * vel.y);
+  // if (pos.x <= 0)
+  //     vel = sf::Vector2f(-1 * vel.x, 1 * vel.y);
+  // if ((pos.y) >= SCREEN_HEIGHT - 20)
+  //     vel = sf::Vector2f(1 * vel.x, -1 * vel.y);
+  // if (pos.y <= 0)
+  //     vel = sf::Vector2f(1 * vel.x, -1 * vel.y);
+  //=====================================================//
 }
 
-void System::Draw(sf::RenderWindow &window)
-{
-    window.clear();
+void System::Draw(sf::RenderWindow &window) {
+  window.clear();
+
+  for (auto &walker : system) {
+    walker.draw(window);
+  }
   // iterate through vector and call their draw fn
-    // window.draw(shape);
+  // window.draw(shape);
 }

@@ -7,7 +7,7 @@ using namespace std;
 
 animate::animate() : sidebar(WORK_PANEL, SIDE_BAR) {
   cout << "animate CTOR: TOP" << endl;
-  window.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "SFML window!");
+  window.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Bouncing Balls!");
   // VideoMode class has functions to detect screen size etc.
   // RenderWindow constructor has a third argumnet to set style
   // of the window: resize, fullscreen etc.
@@ -41,10 +41,10 @@ animate::animate() : sidebar(WORK_PANEL, SIDE_BAR) {
     exit(-1);
   }
 
-  myTextLabel = sf::Text("Initial String for myTextLabel", font);
+  myTextLabel = sf::Text("Charles Villalpando, Bouncing Balls", font);
   myTextLabel.setCharacterSize(20);
   myTextLabel.setStyle(sf::Text::Bold);
-  myTextLabel.setFillColor(sf::Color::Green);
+  myTextLabel.setFillColor(sf::Color::Red);
   myTextLabel.setPosition(sf::Vector2f(
       10, SCREEN_HEIGHT - myTextLabel.getLocalBounds().height - 5));
   cout << "animate instantiated successfully." << endl;
