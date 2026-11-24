@@ -29,15 +29,20 @@ void System::Step(int command)
     // all this is the responsibility of the
     //  individual object:
     shape.move(vel);
-    sf::Vector2f pos = shape.getPosition();
-    if ((pos.x) >= WORK_PANEL - 20)
-        vel = sf::Vector2f(-1 * vel.x, 1 * vel.y);
-    if (pos.x <= 0)
-        vel = sf::Vector2f(-1 * vel.x, 1 * vel.y);
-    if ((pos.y) >= SCREEN_HEIGHT - 20)
-        vel = sf::Vector2f(1 * vel.x, -1 * vel.y);
-    if (pos.y <= 0)
-        vel = sf::Vector2f(1 * vel.x, -1 * vel.y);
+// move() is one particle function 
+//
+// ===================================================//
+// this is apply_force function
+    // sf::Vector2f pos = shape.getPosition();
+    // if ((pos.x) >= WORK_PANEL - 20)
+    //     vel = sf::Vector2f(-1 * vel.x, 1 * vel.y);
+    // if (pos.x <= 0)
+    //     vel = sf::Vector2f(-1 * vel.x, 1 * vel.y);
+    // if ((pos.y) >= SCREEN_HEIGHT - 20)
+    //     vel = sf::Vector2f(1 * vel.x, -1 * vel.y);
+    // if (pos.y <= 0)
+    //     vel = sf::Vector2f(1 * vel.x, -1 * vel.y);
+//=====================================================//
 }
 
 void System::Draw(sf::RenderWindow &window)

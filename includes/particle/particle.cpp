@@ -13,3 +13,7 @@ Particle::Particle() {
   int b_ = r.Next(0, 255);
   shape.setFillColor(sf::Color(r_, g_, b_));
 }
+
+void Particle::move(){
+  shape.move(vel);
+}
