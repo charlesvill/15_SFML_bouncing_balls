@@ -11,13 +11,13 @@ System::System()
     int ypos = 100;
     // the shape of the object, along with its velocity, acceleration,
     // position, etc. should be part of the individual object.
-    shape = sf::CircleShape(10);
-    shape.setPosition(sf::Vector2f(xpos, ypos));
-    vel = sf::Vector2f(r.Next(-5, 5), r.Next(-5, 5)); // random velocity
-    int r_ = r.Next(0, 255);
-    int g_ = r.Next(0, 255);
-    int b_ = r.Next(0, 255);
-    shape.setFillColor(sf::Color(r_, g_, b_));
+    // shape = sf::CircleShape(10);
+    // shape.setPosition(sf::Vector2f(xpos, ypos));
+    // vel = sf::Vector2f(r.Next(-5, 5), r.Next(-5, 5)); // random velocity
+    // int r_ = r.Next(0, 255);
+    // int g_ = r.Next(0, 255);
+    // int b_ = r.Next(0, 255);
+    // shape.setFillColor(sf::Color(r_, g_, b_));
 }
 
 //------------------------------------------------------------------

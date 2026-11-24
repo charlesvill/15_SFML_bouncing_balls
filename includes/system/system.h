@@ -1,5 +1,6 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
+#include "../particle/particle.h"
 #include <SFML/Graphics.hpp>
 
 using namespace std;
@@ -11,9 +12,9 @@ public:
   void Draw(sf::RenderWindow &window);
 
 private:
-  //    vector<Particle> system;
-  sf::CircleShape shape;
-  sf::Vector2f vel;
+  vector<Particle> system;
+  // sf::CircleShape shape;
+  // sf::Vector2f vel;
 };
 
 #endif // SYSTEM_H
