@@ -14,6 +14,16 @@ Particle::Particle() {
   shape.setFillColor(sf::Color(r_, g_, b_));
 }
 
-void Particle::move(){
-  shape.move(vel);
+void Particle::move() { shape.move(vel); }
+
+void Particle::apply_force() {
+  sf::Vector2f pos = shape.getPosition();
+  if ((pos.x) >= WORK_PANEL - 20)
+    vel = sf::Vector2f(-1 * vel.x, 1 * vel.y);
+  if (pos.x <= 0)
+    vel = sf::Vector2f(-1 * vel.x, 1 * vel.y);
+  if ((pos.y) >= SCREEN_HEIGHT - 20)
+    vel = sf::Vector2f(1 * vel.x, -1 * vel.y);
+  if (pos.y <= 0)
+    vel = sf::Vector2f(1 * vel.x, -1 * vel.y);
 }
