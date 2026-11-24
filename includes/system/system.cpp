@@ -6,9 +6,19 @@
 
 System::System()
 {
-    Random r;
-    int xpos = 100;
-    int ypos = 100;
+
+
+
+  // create vector of particles
+
+
+
+
+
+  //====================OLD=====================//
+    // Random r;
+    // int xpos = 100;
+    // int ypos = 100;
     // the shape of the object, along with its velocity, acceleration,
     // position, etc. should be part of the individual object.
     // shape = sf::CircleShape(10);
@@ -25,10 +35,25 @@ System::System()
 
 void System::Step(int command)
 {
+  // iterate through particles and call their update fns
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // =================OLD=============================//
     // all this is the responsibility of the
     //  individual object:
-    shape.move(vel);
+    // shape.move(vel);
 // move() is one particle function 
 //
 // ===================================================//
@@ -48,5 +73,6 @@ void System::Step(int command)
 void System::Draw(sf::RenderWindow &window)
 {
     window.clear();
-    window.draw(shape);
+  // iterate through vector and call their draw fn
+    // window.draw(shape);
 }
