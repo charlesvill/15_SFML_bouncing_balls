@@ -3,8 +3,8 @@
 using namespace std;
 
 int main() {
-  // animate game;
-  // game.run();
+  animate game;
+  game.run();
   cout << endl
        << endl
        << "------ MAIN EXITING --------------------------" << endl;
